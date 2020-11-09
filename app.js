@@ -125,6 +125,10 @@ function lastCall(arrayOfEmployees) {
         } else {
             //finish making the HTMLs
             console.log("That's all folks!");
+            const template = render(arrayOfEmployees);
+            fs.writeFile(outputPath, template, function(err) {
+                if (err) throw err;
+            });
         }
     })
 }
