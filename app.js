@@ -52,6 +52,7 @@ function internPrompt(res, arrayOfEmployees) {
     inquirer.prompt(internQ).then((response) => {
         console.log(response);
         school = response.school;
+        //generate new Intern object
         const intern = new Intern(name, id, email, school);
         arrayOfEmployees.push(intern);
         // console.log("Intern prompt:");
@@ -76,6 +77,7 @@ function managerPrompt(res, arrayOfEmployees) {
     ];
     inquirer.prompt(managerQ).then((response) => {
         officeNumber = response.officeNumber;
+        //generate new Manager object
         const manager = new Manager(name, id, email, officeNumber);
         arrayOfEmployees.push(manager);
         // console.log("Manager prompt:");
@@ -100,6 +102,7 @@ function engineerPrompt(res, arrayOfEmployees) {
     ];
     inquirer.prompt(engineerQ).then((response) => {
         github = response.github;
+        //generates new Engineer object
         const engineer = new Engineer(name, id, email, github);
         arrayOfEmployees.push(engineer);
         // console.log("Engineer prompt:");
@@ -109,6 +112,7 @@ function engineerPrompt(res, arrayOfEmployees) {
    
 }
 
+//this function ends the prompts or keeps adding employees to team profile
 function lastCall(arrayOfEmployees) {
     const lastQ = [
         {
@@ -118,7 +122,8 @@ function lastCall(arrayOfEmployees) {
         }
     ]
     inquirer.prompt(lastQ).then((response) => {
-        if (response.addMore === 'Y') {
+        if (response.addMore === 'Y' || response.addMore === 'y') {
+            //call initial prompt function again
             init(questions, arrayOfEmployees);
         } else {
             //finish making the HTMLs
@@ -133,8 +138,8 @@ function lastCall(arrayOfEmployees) {
 //include 3 functions, one for intern, manager, and engineer. First question is the employees role
 //use an if block to call a function to use a specific inquirer for the given role
 
-// last question is "Would you like to add any more employees?"" If yes, call inquirer
-//again. If no, then use the array of employee objects and call render()
+
+//ask the preliminary question of the role, then go into role-specific questions
 function init(questions, arrayOfEmployees) {
     inquirer.prompt(questions).then((response) => {
         if (response.role === 'intern' || response.role === 'Intern') {
@@ -146,27 +151,5 @@ function init(questions, arrayOfEmployees) {
         }
     });
 };
-
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
+//call initial prompt function
 init(questions, arrayOfEmployees);
