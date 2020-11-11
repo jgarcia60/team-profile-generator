@@ -27,7 +27,7 @@ To install the project files, you can clone the "team-profile-generator" reposit
 
 ## Usage 
 
-You may use this code to learn about using the Inquirer npm package to create a command line interface application, or as a tool to learn about using node.js, creating and extending object classes, and writing files, and learning how to use jest for test driven development.
+You may use this code to learn about using the Inquirer npm package to create a command line interface application, or as a tool to learn about using node.js, creating and extending object classes, and writing files, and learning how to use jest for test driven development. to see how it works, check out this walk-through video: https://drive.google.com/file/d/18kHBLR7XUtoHKWpt_7HMxDP3UFUKhbRC/view
 
 This is what it looks like:
 ![screenshot](./team-profile-generator.png)
