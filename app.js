@@ -54,12 +54,11 @@ function internPrompt(res, arrayOfEmployees) {
         school = response.school;
         const intern = new Intern(name, id, email, school);
         arrayOfEmployees.push(intern);
-        console.log("Intern prompt:");
-        console.log(arrayOfEmployees);
+        // console.log("Intern prompt:");
+        // console.log(arrayOfEmployees);
         lastCall(arrayOfEmployees);
     });
     
-    // return arrayOfEmployees;
 }
 
 function managerPrompt(res, arrayOfEmployees) {
@@ -79,12 +78,11 @@ function managerPrompt(res, arrayOfEmployees) {
         officeNumber = response.officeNumber;
         const manager = new Manager(name, id, email, officeNumber);
         arrayOfEmployees.push(manager);
-        console.log("Manager prompt:");
-        console.log(arrayOfEmployees);
+        // console.log("Manager prompt:");
+        // console.log(arrayOfEmployees);
         lastCall(arrayOfEmployees);
     });
     
-    // return arrayOfEmployees;
 }
 
 function engineerPrompt(res, arrayOfEmployees) {
@@ -104,11 +102,11 @@ function engineerPrompt(res, arrayOfEmployees) {
         github = response.github;
         const engineer = new Engineer(name, id, email, github);
         arrayOfEmployees.push(engineer);
-        console.log("Engineer prompt:");
-        console.log(arrayOfEmployees);
+        // console.log("Engineer prompt:");
+        // console.log(arrayOfEmployees);
         lastCall(arrayOfEmployees);
     });
-    // return arrayOfEmployees;
+   
 }
 
 function lastCall(arrayOfEmployees) {
@@ -124,7 +122,7 @@ function lastCall(arrayOfEmployees) {
             init(questions, arrayOfEmployees);
         } else {
             //finish making the HTMLs
-            console.log("That's all folks!");
+            console.log("Check the output folder for the team.html file!");
             const template = render(arrayOfEmployees);
             fs.writeFile(outputPath, template, function(err) {
                 if (err) throw err;
