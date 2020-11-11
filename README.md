@@ -18,10 +18,6 @@ Code abstraction was also practiced to implement several methods for adding diff
 
 ## Installation
 
-Here is the link to the webpage:
-
-https://jgarcia60.github.io/team-profile-generator
-
 To install the project files, you can clone the "team-profile-generator" repository which contains the necessary files at https://github.com/jgarcia60/team-profile-generator by clicking the green drop down "Code" and cloning the repo with an SSH key. To run the command line interface app, you will need to run "node app.js" in the correct directory in your terminal. Then your created team profile html will be generated in the "output" folder.
 
 
